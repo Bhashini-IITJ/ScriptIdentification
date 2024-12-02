@@ -2,3 +2,4 @@ myenv/
 Vit/saved_models_vit/
 clip/models/
 clip/predictions.csv
+Vit/models/
