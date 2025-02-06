@@ -35,11 +35,39 @@ python test_crnn.py
 The code will output class-wise accuracy along with macro precision, recall, and F1-score. Additionally, a confusion matrix will be saved in the best_model's folder
 
 ## Inference
-In the config.py file for the infer_config dictionary pass the trained model folder_path and img_path.Now to get prediction:
+To get started, clone the repository, switch to dev branch and in the Vit directory  make "models" directory so that model gets downloaded as we use the inference script. The models can be downloaded directly from github [assets](https://github.com/Bhashini-IITJ/ScriptIdentification/releases/tag/Vit_Models) or via specifying the model name as shown below.
 
-```bash
-python infer.py
+Script detection can be done using ```infer.py``` on a single image as input.
+
+```python
+python infer.py --image_path demo_images/D_image_149_9.jpg --model_name assamese
+# {'predicted_class': 'assamese'}
 ```
+Simply replace ```demo_images/D_image_149_9.jpg``` with your image path and ```assamese``` with the model name for desired language detection which loads a 3 way classifier for the given language,Hindi and English.
+
+Also can use 10-way classifier which is trained on Hindi, English, Assamese,Bengali,Gujarati,Marathi,Odia,Punjabi,Tamil,Telegu
+
+```python
+python infer.py --image_path demo_images/D_image_149_9.jpg --model_name 10C
+``` 
+
+To process a batch of images
+```python
+python infer.py --image_dir demo_images/ --model_name odia --batch
+# predictions.csv
+```
+using the ```image_dir``` and ```--batch``` argument predictions can be made on a batch of images.
+
+
+## Evaluation
+After inference for batch of images and obtaining the predictions in a csv file, use this for calculating the accuracy for the language predictions with the actual labels. 
+
+The test.csv should contain two columns **Filepath** that has path of the images and **Language_test** which has the language labels of those image
+
+```python
+python evaluation.py <path/to/test.csv> <path/to/predictions.csv>
+``` 
+
 
 
 ## API

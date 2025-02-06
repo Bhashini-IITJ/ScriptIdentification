@@ -145,9 +145,8 @@ def predict(image_path,model_name):
         image = Image.open(image_path)
         output = model(image)
         predicted_label = max(output, key=lambda x: x['score'])['label']
-        
-        print(f"image_path: {image_path}, predicted_label: {predicted_label}\n")
-        
+                
+        return {"predicted_class": predicted_label}
 
 
 def predict_batch(image_dir,model_name,time_show,output_csv="prediction.csv"):
