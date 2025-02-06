@@ -21,13 +21,16 @@ cd ScriptIdentification
 
 ### Install dependencies for the desired model (e.g., CLIP, CRNN, or ViT):
 
+#### [Installtion for CRNN](CRNN/README.md#installation)
 #### [Installtion for CLIP](clip/README.md#installation)
+#### [Installtion for ViT](Vit/README.md#environmentsetup)
 
 ### Usage
 Usage of each model can be found in their respective directory.
 
+#### [CRNN Usage](CRNN/README.md#inference)
 #### [CLIP Usage](clip/README.md#inference)
-
+#### [ViT Usage](Vit/README.md#inference)
 
 ## Acknowledgements
 We would like to express our gratitude to the authors and contributors of the following repositories for their valuable contributions to this project:
