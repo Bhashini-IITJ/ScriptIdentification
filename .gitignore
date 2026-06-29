@@ -4,3 +4,4 @@ clip/models/
 clip/predictions.csv
 Vit/models/
 CRNN/savedModels
+Efficientnet/models
