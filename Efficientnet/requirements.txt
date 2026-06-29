@@ -1,0 +1,11 @@
+jupyter 
+transformers 
+datasets
+torchvision
+Pillow
+fastapi
+uvicorn
+python-multipart
+scikit-learn
+matplotlib
+tqdm
